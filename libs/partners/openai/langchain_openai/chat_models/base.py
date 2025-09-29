@@ -236,6 +236,8 @@ def _format_message_content(content: Any) -> Any:
                     )
                 else:
                     continue
+            elif isinstance(block, str):
+                formatted_content.append({"type": "text", "text": block})
             else:
                 formatted_content.append(block)
     else:
